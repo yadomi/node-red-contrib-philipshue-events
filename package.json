@@ -1,6 +1,6 @@
 {
   "name": "@yadomi/node-red-contrib-philipshue-events",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "author": {
     "email": "felix.yadomi@gmail.com",
@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "postbuild": "node postbuild.js",
-    "build": "tsc --outDir lib",
+    "build": "tsc --outDir lib && yarn postbuild",
     "build:watch": "nodemon -w src -e ts,html --exec 'yarn build && yarn postbuild'",
     "node-red": "./node_modules/node-red/bin/node-red-pi -s .node-red/settings.js -u ./.node-red"
   },

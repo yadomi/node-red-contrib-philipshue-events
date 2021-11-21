@@ -12,7 +12,7 @@ This node needs to have `philipshue-events-config` configured for your bridge. Y
 
 The node will connect to the **EventSource** endpoint and output every events as a message.
 
-The node will output event as JSON. Here is an example of ``msg.payload`:
+The node will output event as JSON. Here is an example of `msg.payload`:
 
 ```json
 {

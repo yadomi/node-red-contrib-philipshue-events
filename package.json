@@ -1,6 +1,11 @@
 {
   "name": "@yadomi/node-red-contrib-philipshue-events",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "email": "felix.yadomi@gmail.com",
+    "name": "Felix Yadomi"
+  },
   "devDependencies": {
     "glob": "^7.2.0",
     "node-red": "^2.1.3",
@@ -16,6 +21,10 @@
   },
   "files": [
     "lib/**/*"
+  ],
+  "keywords": [
+    "philipe-hue",
+    "node-red"
   ],
   "scripts": {
     "postbuild": "node postbuild.js",

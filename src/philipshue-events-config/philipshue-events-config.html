@@ -1,0 +1,154 @@
+<style type="text/css">
+  #node-config-dialog-edit-form #bridge-info h4 {
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  #node-config-dialog-edit-form #bridge-info h5 {
+    margin: 0;
+    font-weight: normal;
+  }
+
+  #node-config-dialog-edit-form #bridge-info h5 span,
+  #node-config-dialog-edit-form #bridge-info h4 span {
+    font-weight: bold;
+  }
+
+  #node-config-dialog-edit-form #bridge-info {
+    display: none;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 2px;
+  }
+
+  #node-config-dialog-edit-form .state-pending,
+  #node-config-dialog-edit-form .state-success {
+    display: none;
+  }
+
+  #node-config-dialog-edit-form #bridge-info[data-state="pending"] {
+    border: 1px solid #e7cb7d;
+    background: #ffeda4;
+  }
+
+  #node-config-dialog-edit-form #bridge-info[data-state="success"] {
+    border: 1px solid #69d596;
+    background: #c6f1d9;
+  }
+
+  #node-config-dialog-edit-form
+    #bridge-info[data-state="pending"]
+    .state-pending {
+    display: block;
+  }
+  #node-config-dialog-edit-form
+    #bridge-info[data-state="success"]
+    .state-success {
+    display: block;
+  }
+</style>
+
+<script type="text/javascript">
+  RED.nodes.registerType("philipshue-events-config", {
+    category: "config",
+    color: "#ff9514",
+    defaults: {
+      address: { value: null },
+      applicationkey: { value: null },      
+    },
+    label: function () {
+      return this.address ? `Hue (${this.address})` : "Hue";
+    },
+    oneditprepare: () => {
+      this.interval = null;
+
+      let button = {
+        discover: document.querySelector("#btn-discover"),
+      };
+      let input = {
+        address: document.querySelector("#node-config-input-address"),
+        applicationkey: document.querySelector(
+          "#node-config-input-applicationkey"
+        ),
+      };
+
+      const onDiscover = () => {
+        fetch("https://discovery.meethue.com/")
+          .then((res) => res.json())
+          .then((res) => {
+            const [bridge] = res;
+            if (bridge && bridge.internalipaddress) {
+              input.address.value = bridge.internalipaddress;
+
+              document.querySelector("#bridge-info").style.display = "block";
+              document.querySelector(
+                "#bridge-info h5"
+              ).innerHTML = `Bridge <span>${bridge.id}</span> found at <span>${bridge.internalipaddress}</span>`;
+
+              onPairRequest();
+            }
+          });
+      };
+
+      const onPairRequest = () => {
+        const interval = () => {
+          fetch(`http://${input.address.value}/api`, {
+            method: "POST",
+            body: JSON.stringify({
+              devicetype: "node-red-contrib-philipshue-events",
+            }),
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              const [response] = res;
+              if (response.error) {
+                return;
+              }
+
+              if (response.success && response.success.username) {
+                document.querySelector("#bridge-info").dataset.state =
+                  "success";
+                input.applicationkey.value = response.success.username;
+              }
+
+              clearInterval(this.interval);
+            });
+        };
+
+        this.interval = setInterval(interval, 2000);
+      };
+
+      button.discover.addEventListener('click', onDiscover);
+    },
+    oneditcancel: () => {
+      clearInterval(this.interval);
+    },
+    oneditsave: () => {
+      clearInterval(this.interval);
+    },
+    oneditdelete: () => {
+      clearInterval(this.interval);
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="philipshue-events-config">
+  <div>
+    <button type="button" id="btn-discover" class="red-ui-button">Discover Hue Bridge</button>
+    <div id="bridge-info" data-state="pending">
+      <h5></h5>
+      <h4 class="state-pending">Press the link button on the bridge to associate...</h4>
+      <h4 class="state-success">Successful association ! Click <span>Add</span> or <span>Save</span> to persist.</h4>
+    </div>
+  </div>
+
+  <hr/>
+  <div class="form-row">
+      <label for="node-config-input-address">Bridge address</label>
+      <input type="text" id="node-config-input-address" placeholder="192.168.0.25">
+  </div>
+  <div class="form-row">
+      <label for="node-config-input-applicationkey"><i class="icon-tag"></i>Application key</label>
+      <input type="text" id="node-config-input-applicationkey" placeholder="xxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxx">
+  </div>
+</script>

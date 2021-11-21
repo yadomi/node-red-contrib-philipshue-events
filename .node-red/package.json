@@ -1,0 +1,13 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "@yadomi/node-red-contrib-philipshue-events": "^1.0.0",
+        "node-red": "^2.1.3"
+    },
+    "resolutions": {
+        "@yadomi/node-red-contrib-philipshue-events": "portal:../"
+    }
+}

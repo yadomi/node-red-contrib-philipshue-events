@@ -1,37 +1,42 @@
 import { NodeInitializer, NodeConstructor, NodeDef, Node } from "node-red";
 const EventEmitter = require("events");
-const EventSource = require('eventsource');
+const EventSource = require("eventsource");
 
 const nodeInit: NodeInitializer = (RED): void => {
-  const node: NodeConstructor<Node, NodeDef, Record<string, never>> = function (
-    config
-  ) {
+  const node: NodeConstructor<Node, NodeDef, Record<string, never>> = function (config) {
+    RED.nodes.createNode(this, config);
+
+    let es;
     this.emitter = new EventEmitter();
     this.config = config;
 
-    const endpoint = 'https://' + config.address + "/eventstream/clip/v2";
+    if (!config.address || !config.applicationkey) return;
+
+    const endpoint = "https://" + config.address + "/eventstream/clip/v2";
 
     try {
-      const es = new EventSource(endpoint, {
+      es = new EventSource(endpoint, {
         headers: {
           "hue-application-key": this.config.applicationkey,
-        }, 
+        },
         https: { rejectUnauthorized: false },
-      }); 
+      });
 
-      es.onmessage = message => {
+      es.onmessage = (message) => {
         const events = JSON.parse(message.data);
-        this.emitter.emit('event', events)
-      }
-  
-      es.onerror = error => {
-        this.emitter.emit('error', error)
-      }
+        this.emitter.emit("event", events);
+      };
+
+      es.onerror = (error) => {
+        this.emitter.emit("error", error);
+      };
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
 
-    RED.nodes.createNode(this, config);
+    this.on("close", () => {
+      es.close();
+    });
   };
 
   RED.nodes.registerType("philipshue-events-config", node);

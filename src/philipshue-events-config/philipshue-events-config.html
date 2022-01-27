@@ -46,6 +46,10 @@
     .state-success {
     display: block;
   }
+
+  #node-config-input-address {
+    width: 60%;
+  }
 </style>
 
 <script type="text/javascript">
@@ -54,7 +58,7 @@
     color: "#ff9514",
     defaults: {
       address: { value: null },
-      applicationkey: { value: null },      
+      applicationkey: { value: null },
     },
     label: function () {
       return this.address ? `Hue (${this.address})` : "Hue";
@@ -64,7 +68,9 @@
 
       let button = {
         discover: document.querySelector("#btn-discover"),
+        pair: document.querySelector("#btn-pair"),
       };
+
       let input = {
         address: document.querySelector("#node-config-input-address"),
         applicationkey: document.querySelector(
@@ -119,6 +125,10 @@
       };
 
       button.discover.addEventListener('click', onDiscover);
+      button.pair.addEventListener('click', onPairRequest);
+      input.address.addEventListener('keyup', () => {
+        button.pair.disabled = input.address.value.length === 0
+      })
     },
     oneditcancel: () => {
       clearInterval(this.interval);
@@ -146,6 +156,7 @@
   <div class="form-row">
       <label for="node-config-input-address">Bridge address</label>
       <input type="text" id="node-config-input-address" placeholder="192.168.0.25">
+      <button type="button" id="btn-pair" class="red-ui-button">Pair</button>
   </div>
   <div class="form-row">
       <label for="node-config-input-applicationkey"><i class="icon-tag"></i>Application key</label>

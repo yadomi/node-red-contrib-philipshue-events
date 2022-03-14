@@ -34,6 +34,6 @@
   },
   "packageManager": "yarn@3.1.0",
   "dependencies": {
-    "eventsource": "^1.1.0"
+    "eventsource": "^2.0.0"
   }
 }

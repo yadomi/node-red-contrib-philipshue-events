@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+      "strictNullChecks": true,
       "target": "es2019",
       "forceConsistentCasingInFileNames": true,
       "isolatedModules": true,
       "module": "commonjs",
       "moduleResolution": "node",
+      "esModuleInterop": true
   }
 }

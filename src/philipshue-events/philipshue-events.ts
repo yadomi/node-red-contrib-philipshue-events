@@ -7,6 +7,10 @@ const nodeInit: NodeInitializer = (RED): void => {
         this.status({ fill: "blue", text: "Incoming..." });
         setTimeout(status.listening, 1000);
       },
+      connected: () => {
+        this.status({ fill: "green", text: "Connected" });
+        setTimeout(status.listening, 2000);
+      },
       disconected: () => {
         this.status({ fill: "red", text: "Not connected" });
       },
@@ -38,6 +42,8 @@ const nodeInit: NodeInitializer = (RED): void => {
       status.error();
       this.send({ payload: error });
     });
+
+    this.bridge.emitter.on("onopen", status.connected)
   };
 
   RED.nodes.registerType("philipshue-events", node);

@@ -265,7 +265,7 @@ __metadata:
   dependencies:
     "@types/eventsource": ^1.1.9
     "@types/node": ^18.0.4
-    eventsource: ^2.0.0
+    eventsource: ^2.0.2
     glob: ^7.2.3
     node-red: ^2.1.3
     nodemon: ^2.0.19
@@ -1167,10 +1167,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventsource@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "eventsource@npm:2.0.0"
-  checksum: df6b4e905beb33db370caae62c5819cac4e390088dff180827db4990c3c185e81738b4a869c357f83a63f650428fb7547a513e4954d8b860896806175d317d2c
+"eventsource@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "eventsource@npm:2.0.2"
+  checksum: c0072d972753e10c705d9b2285b559184bf29d011bc208973dde9c8b6b8b7b6fdad4ef0846cecb249f7b1585e860fdf324cbd2ac854a76bc53649e797496e99a
   languageName: node
   linkType: hard
 

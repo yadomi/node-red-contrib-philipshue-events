@@ -9,7 +9,7 @@ const nodeInit: NodeInitializer = (RED): void => {
       },
       connected: () => {
         this.status({ fill: "green", text: "Connected" });
-        setTimeout(status.listening, 1000);
+        setTimeout(status.listening, 2000);
       },
       disconected: () => {
         this.status({ fill: "red", text: "Not connected" });

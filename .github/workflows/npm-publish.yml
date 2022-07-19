@@ -11,6 +11,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    env:
+      YARN_NPM_PUBLISH_REGISTRY: 'https://registry.npmjs.org'
+      YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}    
     steps:
       - uses: actions/checkout@v3
         with:
@@ -34,7 +37,4 @@ jobs:
         run: yarn build
 
       - name: Publish to NPM
-        run: yarn npm login --scope yadomi --publish && yarn npm whoami --scope && yarn npm publish --access public --tag ${{ github.event.inputs.version }}
-        env:
-          YARN_NPM_PUBLISH_REGISTRY: 'https://registry.npmjs.org'
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn npm login --scope yadomi --publish && yarn npm whoami --scope yadomi && yarn npm whoami && yarn npm publish --access public --tag ${{ github.event.inputs.version }}

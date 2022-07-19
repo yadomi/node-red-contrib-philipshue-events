@@ -17,4 +17,5 @@ jobs:
         with:
           cmd: build
       - uses: borales/actions-yarn@v3.1.0
+        with:
           cmd: pack

@@ -1,0 +1,39 @@
+name: Publish package to NPM
+on:
+  workflow_dispatch:
+      inputs:
+        version:
+          required: true
+          type: string
+          description: 'Set release version (e.g. M.m.p-betaname)'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Show yarn version
+        run: yarn --version
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Update package.json
+        run: yarn version ${{ github.event.inputs.version }}
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish to NPM
+        run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

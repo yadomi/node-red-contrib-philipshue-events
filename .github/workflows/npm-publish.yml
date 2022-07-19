@@ -1,0 +1,20 @@
+name: Publish package to NPM
+on:
+  push:
+    branches:
+      - 'chore/gh-action-publish'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v3.1.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v3.1.0
+        with:
+          cmd: build
+      - uses: borales/actions-yarn@v3.1.0
+          cmd: pack

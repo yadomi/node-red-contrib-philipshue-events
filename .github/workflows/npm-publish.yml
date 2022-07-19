@@ -14,8 +14,11 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
 
+      - name: Show yarn version
+        run: yarn --version
+
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install
 
       - name: Build
         run: yarn build

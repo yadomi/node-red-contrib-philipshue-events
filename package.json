@@ -1,6 +1,6 @@
 {
   "name": "@yadomi/node-red-contrib-philipshue-events",
-  "version": "1.4.0",
+  "version": "1.4.1-testing7",
   "license": "MIT",
   "author": {
     "email": "felix.yadomi@gmail.com",
@@ -37,5 +37,6 @@
   "packageManager": "yarn@3.2.1",
   "dependencies": {
     "eventsource": "^2.0.2"
-  }
+  },
+  "stableVersion": "1.4.0"
 }

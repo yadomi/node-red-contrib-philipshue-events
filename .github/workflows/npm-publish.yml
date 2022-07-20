@@ -5,15 +5,12 @@ on:
         version:
           required: true
           type: string
-          description: 'Set release version (e.g. M.m.p-betaname)'
+          description: 'Set release version (e.g. `M.m.p`)'
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    env:
-      YARN_NPM_PUBLISH_REGISTRY: 'https://registry.npmjs.org'
-      YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}    
     steps:
       - uses: actions/checkout@v3
         with:
@@ -23,9 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - name: Show yarn version
-        run: yarn --version
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: yarn install
@@ -37,4 +32,6 @@ jobs:
         run: yarn build
 
       - name: Publish to NPM
-        run: yarn npm login --scope yadomi --publish && yarn npm whoami --scope yadomi && yarn npm whoami && yarn npm publish --access public --tag ${{ github.event.inputs.version }}
+        run: npm publish --scope yadomi --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

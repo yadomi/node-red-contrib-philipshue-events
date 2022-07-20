@@ -34,7 +34,7 @@
     "build:watch": "nodemon -w src -e ts,html --exec 'yarn build && yarn postbuild'",
     "node-red": "./node_modules/node-red/bin/node-red-pi -s .node-red/settings.js -u ./.node-red"
   },
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.2.1",
   "dependencies": {
     "eventsource": "^2.0.2"
   }

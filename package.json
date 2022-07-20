@@ -46,6 +46,5 @@
   "packageManager": "yarn@3.2.1",
   "dependencies": {
     "eventsource": "^2.0.2"
-  },
-  "stableVersion": "1.4.0"
+  }
 }

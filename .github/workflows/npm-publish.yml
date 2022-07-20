@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+          always-auth: true
 
       - name: Install dependencies
         run: yarn install
@@ -35,3 +36,11 @@ jobs:
         run: npm publish --scope yadomi --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push release
+        run: |
+          git config --global user.name 'npm deployer'
+          git config --global user.email 'npm-deployer@users.noreply.github.com'        
+          git add package.json .yarn*
+          git commit -m "Release version ${{ github.event.inputs.version }}"
+          git push --follow-tags

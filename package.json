@@ -6,6 +6,14 @@
     "email": "felix.yadomi@gmail.com",
     "name": "Felix Yadomi"
   },
+  "homepage": "https://github.com/yadomi/node-red-contrib-philipshue-events/#readme",
+  "bugs": {
+    "url" : "https://github.com/yadomi/node-red-contrib-philipshue-events/issues",
+    "email" : "felix.yadomi@gmail.com"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "devDependencies": {
     "@types/eventsource": "^1.1.9",
     "@types/node": "^18.0.4",
@@ -16,6 +24,7 @@
     "typescript": "^4.7.4"
   },
   "node-red": {
+    "version": ">=2.2.2",
     "nodes": {
       "philipshue-events-config": "lib/philipshue-events-config/philipshue-events-config.js",
       "philipshue-events": "lib/philipshue-events/philipshue-events.js"

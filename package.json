@@ -1,6 +1,6 @@
 {
   "name": "@yadomi/node-red-contrib-philipshue-events",
-  "version": "1.4.1-testing7",
+  "version": "1.4.1",
   "license": "MIT",
   "author": {
     "email": "felix.yadomi@gmail.com",
@@ -8,8 +8,8 @@
   },
   "homepage": "https://github.com/yadomi/node-red-contrib-philipshue-events/#readme",
   "bugs": {
-    "url" : "https://github.com/yadomi/node-red-contrib-philipshue-events/issues",
-    "email" : "felix.yadomi@gmail.com"
+    "url": "https://github.com/yadomi/node-red-contrib-philipshue-events/issues",
+    "email": "felix.yadomi@gmail.com"
   },
   "engines": {
     "node": ">=12.0.0"

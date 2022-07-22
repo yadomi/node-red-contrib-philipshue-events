@@ -1,6 +1,6 @@
 {
   "name": "@yadomi/node-red-contrib-philipshue-events",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "MIT",
   "author": {
     "email": "felix.yadomi@gmail.com",
@@ -50,5 +50,5 @@
     "nodemon": "^2.0.19",
     "tsc": "^2.0.4",
     "typescript": "^4.7.4"
-  }  
+  }
 }

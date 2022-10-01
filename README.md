@@ -6,7 +6,7 @@ See https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events for 
 
 ### Disclaimer
 
-Please note that the Philips Hue API V2 is still in early access. Please make sure your bridge firmware is at least version 1948086000. If you have any issue, you can try generating a new token. If you still encounted issues, feel free to open an issue in this repository.
+Please note that the Philips Hue API V2 is still in early access. Please make sure your bridge firmware is at least version **1948086000**. If you have any issue, you can try generating a new token. If you still encounted issues, feel free to open an issue in this repository.
 
 ## Node
 
@@ -39,7 +39,7 @@ The node will output event as JSON. Here is an example of `msg.payload`:
 
 You can then use built-in node-RED **switch** node to route the event based on `msg.payload.type` or `msg.payload.data[0].type`.
 
-For more examples, see the example folder. You can also access them in Node-RED > Import > Examples > @yadomi/node-red-contrib-philipshue-events`.
+For more examples, see the [examples folder](https://github.com/yadomi/node-red-contrib-philipshue-events/tree/master/examples). You can also access them in Node-RED > Import > Examples > @yadomi/node-red-contrib-philipshue-events`.
 
 ## Development
 
@@ -55,7 +55,6 @@ Install the dependencies:
 ```
 yarn install
 ```
-
 
 In a terminal, build and watch the nodes:
 

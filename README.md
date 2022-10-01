@@ -4,6 +4,10 @@ This package implements the Philips Hue API V2 EventSource as a node-red node.
 
 See https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events for more information about the Hue API V2 and the /eventstream endpoint
 
+### Disclaimer
+
+Please note that the Philips Hue API V2 is still in early access. Please make sure your bridge firmware is at least version 1948086000. If you have any issue, you can try generating a new token. If you still encounted issues, feel free to open an issue in this repository.
+
 ## Node
 
 There is only one flow node in this package: `philipshue-events`.

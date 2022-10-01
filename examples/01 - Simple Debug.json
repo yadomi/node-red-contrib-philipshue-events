@@ -1,0 +1,39 @@
+[
+    {
+        "id": "c75ab928194a76f6",
+        "type": "tab",
+        "label": "01 - Simple Debug",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2072408bb45fd71f",
+        "type": "philipshue-events",
+        "z": "c75ab928194a76f6",
+        "bridge": null,
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "085379c2cbdfe152"
+            ]
+        ]
+    },
+    {
+        "id": "085379c2cbdfe152",
+        "type": "debug",
+        "z": "c75ab928194a76f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 60,
+        "wires": []
+    }
+]

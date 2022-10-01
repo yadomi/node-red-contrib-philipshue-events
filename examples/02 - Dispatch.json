@@ -1,0 +1,335 @@
+[
+    {
+        "id": "41346538cc59e350",
+        "type": "tab",
+        "label": "02 - Dispatch",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "776fba78bcd8f177",
+        "type": "philipshue-events",
+        "z": "41346538cc59e350",
+        "bridge": "",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "024585a0fba655b7"
+            ]
+        ]
+    },
+    {
+        "id": "024585a0fba655b7",
+        "type": "switch",
+        "z": "41346538cc59e350",
+        "name": "",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "update",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "add",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "delete",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "error",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "3ca7013da9a84553"
+            ],
+            [
+                "9b23164e82fbfb6d"
+            ],
+            [
+                "56a434b57a7821d4"
+            ],
+            [
+                "1bcf1b781bea0cf5"
+            ]
+        ]
+    },
+    {
+        "id": "b8e29459bdbe3f57",
+        "type": "split",
+        "z": "41346538cc59e350",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "12abba1f84a127c7"
+            ]
+        ]
+    },
+    {
+        "id": "3ca7013da9a84553",
+        "type": "function",
+        "z": "41346538cc59e350",
+        "name": "set payload",
+        "func": "return {\n    payload: msg.payload.data\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "b8e29459bdbe3f57"
+            ]
+        ]
+    },
+    {
+        "id": "1bcf1b781bea0cf5",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "56a434b57a7821d4",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on delete",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9b23164e82fbfb6d",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on add",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "12abba1f84a127c7",
+        "type": "switch",
+        "z": "41346538cc59e350",
+        "name": "",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "light",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "button",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "motion",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "grouped_light",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bridge_home",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "behavior_instance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "light_level",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "scene",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 9,
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "656cfcb16f18599b"
+            ],
+            [
+                "5b6bfc73c3dddb3a"
+            ],
+            [
+                "712e6e27333d3813"
+            ],
+            [
+                "4034c07178bdfb74"
+            ],
+            [
+                "fe8219bee01d3229"
+            ],
+            [
+                "fe8219bee01d3229"
+            ],
+            [
+                "fe8219bee01d3229"
+            ],
+            [
+                "fe8219bee01d3229"
+            ],
+            [
+                "fe8219bee01d3229"
+            ]
+        ]
+    },
+    {
+        "id": "fe8219bee01d3229",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "others events",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "656cfcb16f18599b",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on light change",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5b6bfc73c3dddb3a",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on button change (any events)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "712e6e27333d3813",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on motion",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4034c07178bdfb74",
+        "type": "debug",
+        "z": "41346538cc59e350",
+        "name": "on grouped light change",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 220,
+        "wires": []
+    }
+]

@@ -38,3 +38,31 @@ The node will output event as JSON. Here is an example of `msg.payload`:
 ```
 
 You can then use built-in node-RED **switch** node to route the event based on `msg.payload.type` or `msg.payload.data[0].type`.
+
+## Development
+
+Clone the repository 
+
+```
+git clone git@github.com:yadomi/node-red-contrib-philipshue-events.git
+cd node-red-contrib-philipshue-events
+```
+
+Install the dependencies:
+
+```
+yarn install
+```
+
+
+In a terminal, build and watch the nodes:
+
+```
+yarn build:watch
+```
+
+In a second terminal, run the debug node-red instance, accesssible via http://127.0.0.1:1880
+
+```
+yarn node-red
+```

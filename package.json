@@ -22,7 +22,8 @@
     }
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "examples/**/*"
   ],
   "keywords": [
     "philipe-hue",

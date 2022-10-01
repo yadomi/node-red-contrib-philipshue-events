@@ -12,6 +12,7 @@ yarn-error.log*
 
 .node-red/*
 !.node-red/package.json
+!.node-red/yarn.lock
 !.node-red/settings.js
 
 node_modules

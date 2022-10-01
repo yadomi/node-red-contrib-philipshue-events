@@ -1,5 +1,5 @@
 module.exports = {
-  flowFile: "./.node-red/flows.json",
-  userDir: "./.node-red/",
+  flowFile: "./flows.json",
+  userDir: "./",
   credentialSecret: "dummy",
 };

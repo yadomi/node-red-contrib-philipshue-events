@@ -39,6 +39,8 @@ The node will output event as JSON. Here is an example of `msg.payload`:
 
 You can then use built-in node-RED **switch** node to route the event based on `msg.payload.type` or `msg.payload.data[0].type`.
 
+For more examples, see the example folder. You can also access them in Node-RED > Import > Examples > @yadomi/node-red-contrib-philipshue-events`.
+
 ## Development
 
 Clone the repository 

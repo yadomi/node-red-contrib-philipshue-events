@@ -11,10 +11,6 @@
     "url": "https://github.com/yadomi/node-red-contrib-philipshue-events/issues",
     "email": "felix.yadomi@gmail.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yadomi/node-red-contrib-philipshue-events.git"
-  },
   "engines": {
     "node": ">=12.0.0"
   },

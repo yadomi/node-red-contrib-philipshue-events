@@ -40,12 +40,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@node-red/editor-api@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/editor-api@npm:3.0.0"
+"@node-red/editor-api@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/editor-api@npm:3.0.2"
   dependencies:
-    "@node-red/editor-client": 3.0.0
-    "@node-red/util": 3.0.0
+    "@node-red/editor-client": 3.0.2
+    "@node-red/util": 3.0.2
     bcrypt: 5.0.1
     bcryptjs: 2.4.3
     body-parser: 1.20.0
@@ -65,20 +65,20 @@ __metadata:
   dependenciesMeta:
     bcrypt:
       optional: true
-  checksum: dcdddf5a0deaebded4895126a88beb73ec35299f079f949cb17721a722292ac22b051778af867b2052499cc49f8b1ea13233c2bd0e60ac1fafe6b39be57a13ea
+  checksum: 798913f34b44dbc06382df369c3d13d0f9908079cf55ffd3d10e343d52c34f08994673babe907fc535c2342620dbcf56b242f7da6e41bb66824db15a195bfc43
   languageName: node
   linkType: hard
 
-"@node-red/editor-client@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/editor-client@npm:3.0.0"
-  checksum: 2b8c636467f9bed49aa2bba9ffdc944de7f07e439451a20dbcec485a0c477900497e4859041b08057b7843afad7761eab5861f60b85cb325db003a6f760d26b5
+"@node-red/editor-client@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/editor-client@npm:3.0.2"
+  checksum: a8ea7cc9131ab7dc1733acfa53c7c578c64a7a77cca7610a0398c5a235b3cc3dbfb3bcdac4f63681faae29e6555dbf730ad05f4602945ef28566950868bec87c
   languageName: node
   linkType: hard
 
-"@node-red/nodes@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/nodes@npm:3.0.0"
+"@node-red/nodes@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/nodes@npm:3.0.2"
   dependencies:
     acorn: 8.7.1
     acorn-walk: 8.2.0
@@ -90,7 +90,7 @@ __metadata:
     cookie-parser: 1.4.6
     cors: 2.8.5
     cronosjs: 1.7.1
-    denque: 2.0.1
+    denque: 2.1.0
     form-data: 4.0.0
     fs-extra: 10.1.0
     got: 11.8.5
@@ -111,51 +111,51 @@ __metadata:
     uuid: 8.3.2
     ws: 7.5.6
     xml2js: 0.4.23
-  checksum: ee3b5ac9f186fd2b38f1ce23487009a39a620fca4d8a84919740945c123010cb08148e8c463b96993301d2071b82775a880da956835023c04d395ec0acca943f
+  checksum: 93239eaf89e0accd93caef7139796a4f9fb674f25af4bf62dd72702c3d9a7b09b4c2aa544a9dbd67fabefaa8c4449da862dd94d129a9ad34b2a6ff17582275fa
   languageName: node
   linkType: hard
 
-"@node-red/registry@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/registry@npm:3.0.0"
+"@node-red/registry@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/registry@npm:3.0.2"
   dependencies:
-    "@node-red/util": 3.0.0
+    "@node-red/util": 3.0.2
     clone: 2.1.2
     fs-extra: 10.1.0
     semver: 7.3.7
     tar: 6.1.11
-    uglify-js: 3.16.2
-  checksum: 0d7b302b0edbc172561feff9f1f41c7f7b05ccb3230510cfd3ef46a866b8a2600687c174421ccff2a3e16579edcd18b1fd48202a5a1a05ea1cb178337960670c
+    uglify-js: 3.16.3
+  checksum: 324975ab855647b20b311127e645e79d26e99557e94e59e15aa77ef6f19e97d69e916f5ad2632e744c02f0debe4cdb375eeb33b46febb8cd40a10f8ffdbc49b8
   languageName: node
   linkType: hard
 
-"@node-red/runtime@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/runtime@npm:3.0.0"
+"@node-red/runtime@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/runtime@npm:3.0.2"
   dependencies:
-    "@node-red/registry": 3.0.0
-    "@node-red/util": 3.0.0
+    "@node-red/registry": 3.0.2
+    "@node-red/util": 3.0.2
     async-mutex: 0.3.2
     clone: 2.1.2
     express: 4.18.1
     fs-extra: 10.1.0
     json-stringify-safe: 5.0.1
-  checksum: 1d5fd3b2343b08b0f62005e257c0e85dd28628092fc57a2785ab2175a98ee5ef39b0e771235eaec109eb7ee3a0b1c664ad66e49dbebe343a6b835e429e0be395
+  checksum: 646b37ea5c44c32a339e9db6ed88f94d8a59cc3e0cbe311a12632f9f435ca5a8d642fbdf648d44d8009711a56b3727478920580607a34dc33deb27003cedeec8
   languageName: node
   linkType: hard
 
-"@node-red/util@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@node-red/util@npm:3.0.0"
+"@node-red/util@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@node-red/util@npm:3.0.2"
   dependencies:
     fs-extra: 10.1.0
-    i18next: 21.8.14
+    i18next: 21.8.16
     json-stringify-safe: 5.0.1
     jsonata: 1.8.6
     lodash.clonedeep: ^4.5.0
     moment: 2.29.4
     moment-timezone: 0.5.34
-  checksum: 5f8d291a31ad1aecf9c074edfdee8b294c1f06709f0dd0a8170135489d60474cd7f2f5a7f24f6ea5951e1aa0291443da49eb18f296ed8cda32b200b44f94b7d5
+  checksum: d78f54fafae18437083b5600eaf471f988bfa6e54853c046426e32867ea8f712307fb8f0e170ff5f2d1de6849da9e8bd777c01ffa004da8ca58228358363e9e8
   languageName: node
   linkType: hard
 
@@ -244,10 +244,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.0.4":
-  version: 18.0.4
-  resolution: "@types/node@npm:18.0.4"
-  checksum: 981284fd57941f233f0e77038087c122f56e3c2b4fc4e090dfc7f0a93abfc526d5ccdd59eb3ef551d713245cf3943e37c7b957f12ba699209341a447c39fab59
+"@types/node@npm:^18.11.1":
+  version: 18.11.1
+  resolution: "@types/node@npm:18.11.1"
+  checksum: 51fb6a1d5369a9d04338a139703c3bc6eb1e2da218f2fa170fa531c1c6b7e829c57695aba842f44cfd358ef4bc18c95c650f25e31d324a552a63bebab16d667d
   languageName: node
   linkType: hard
 
@@ -265,13 +265,13 @@ __metadata:
   resolution: "@yadomi/node-red-contrib-philipshue-events@workspace:."
   dependencies:
     "@types/eventsource": ^1.1.9
-    "@types/node": ^18.0.4
+    "@types/node": ^18.11.1
     eventsource: ^2.0.2
     glob: ^8.0.3
-    node-red: ^3.0.0
-    nodemon: ^2.0.19
+    node-red: ^3.0.2
+    nodemon: ^2.0.20
     tsc: ^2.0.4
-    typescript: ^4.7.4
+    typescript: ^4.8.4
   languageName: unknown
   linkType: soft
 
@@ -997,10 +997,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"denque@npm:2.0.1":
-  version: 2.0.1
-  resolution: "denque@npm:2.0.1"
-  checksum: ec398d1e3c6c8d4f5213dcf9ad74d7faa3b461e29a0019c9742b49a97ac5e16aa7134db45fa9d841e318e7722dd1ba670a474fde9a5b0d870b3a5fc6fe914c30
+"denque@npm:2.1.0":
+  version: 2.1.0
+  resolution: "denque@npm:2.1.0"
+  checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
   languageName: node
   linkType: hard
 
@@ -1599,12 +1599,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:21.8.14":
-  version: 21.8.14
-  resolution: "i18next@npm:21.8.14"
+"i18next@npm:21.8.16":
+  version: 21.8.16
+  resolution: "i18next@npm:21.8.16"
   dependencies:
     "@babel/runtime": ^7.17.2
-  checksum: 83b1a57d761c3d29b90f4e87eb9945902fa13d7750f11bc7f22e8c9999f7e5bf9b2a30c44a9b47569c8ea704573b02a562c2678cf2281073197ace07657d21be
+  checksum: b29d0cfd3e69edb01ba55fac7f642cde921a47880bfb0552756dffdd2aaa866da17ae0825e47b6972b2c1249aa22a6e9f8813ce18a5072975a0dc720c408a4e5
   languageName: node
   linkType: hard
 
@@ -2027,6 +2027,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "minimatch@npm:3.1.2"
+  dependencies:
+    brace-expansion: ^1.1.7
+  checksum: c154e566406683e7bcb746e000b84d74465b3a832c45d59912b9b55cd50dee66e5c4b1e5566dba26154040e51672f9aa450a9aef0c97cfc7336b78b7afb9540a
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^5.0.1":
   version: 5.1.0
   resolution: "minimatch@npm:5.1.0"
@@ -2329,14 +2338,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-red@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "node-red@npm:3.0.0"
+"node-red@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "node-red@npm:3.0.2"
   dependencies:
-    "@node-red/editor-api": 3.0.0
-    "@node-red/nodes": 3.0.0
-    "@node-red/runtime": 3.0.0
-    "@node-red/util": 3.0.0
+    "@node-red/editor-api": 3.0.2
+    "@node-red/nodes": 3.0.2
+    "@node-red/runtime": 3.0.2
+    "@node-red/util": 3.0.2
     basic-auth: 2.0.1
     bcrypt: 5.0.1
     bcryptjs: 2.4.3
@@ -2351,7 +2360,7 @@ __metadata:
   bin:
     node-red: red.js
     node-red-pi: bin/node-red-pi
-  checksum: 4bab806b53a981db73d41fe70ddedd7f02b83a8d43be1b951f5ec30ba212fc35cda958bfd1dc36421ad5dbf9b97e0b4f41a41510a039cf29b32c50d1f6c3cf4d
+  checksum: 90899411725329a376284bce0e2a44b0db573c47aeaab977c06e2798e64bf77fa29584f3c0847513edae41bda10dffd25ac0d7590d2130df760e85e55231be65
   languageName: node
   linkType: hard
 
@@ -2362,14 +2371,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^2.0.19":
-  version: 2.0.19
-  resolution: "nodemon@npm:2.0.19"
+"nodemon@npm:^2.0.20":
+  version: 2.0.20
+  resolution: "nodemon@npm:2.0.20"
   dependencies:
     chokidar: ^3.5.2
     debug: ^3.2.7
     ignore-by-default: ^1.0.1
-    minimatch: ^3.0.4
+    minimatch: ^3.1.2
     pstree.remy: ^1.1.8
     semver: ^5.7.1
     simple-update-notifier: ^1.0.7
@@ -2378,7 +2387,7 @@ __metadata:
     undefsafe: ^2.0.5
   bin:
     nodemon: bin/nodemon.js
-  checksum: c6cf89435a8945693fac2701285eb1f539b5003d943a1be89a9ffbfc9d0275aa7779f85a9eee509e9f19a988d53ce293266d8b35b91010e36ad9e78683f8eb07
+  checksum: 9fe858682414fe703179f4fe36c86e71f40d2693b5345c09803d7b191816a6589c5df8f1f9873bffee92893880183b95a031c86340e46b364ef1b0b7f619edbf
   languageName: node
   linkType: hard
 
@@ -3237,32 +3246,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.4":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
+"typescript@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "typescript@npm:4.8.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
+  checksum: 3e4f061658e0c8f36c820802fa809e0fd812b85687a9a2f5430bc3d0368e37d1c9605c3ce9b39df9a05af2ece67b1d844f9f6ea8ff42819f13bcb80f85629af0
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+"typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
+  version: 4.8.4
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
+  checksum: 563a0ef47abae6df27a9a3ab38f75fc681f633ccf1a3502b1108e252e187787893de689220f4544aaf95a371a4eb3141e4a337deb9895de5ac3c1ca76430e5f0
   languageName: node
   linkType: hard
 
-"uglify-js@npm:3.16.2":
-  version: 3.16.2
-  resolution: "uglify-js@npm:3.16.2"
+"uglify-js@npm:3.16.3":
+  version: 3.16.3
+  resolution: "uglify-js@npm:3.16.3"
   bin:
     uglifyjs: bin/uglifyjs
-  checksum: 5b62e748b7fa1d982f0949ed1876b9367dcde4782f74159f4ea0b3d130835336eb0245e090456ec057468d937eb016114677bb38a7a4fdc7f68c3d002ca760ee
+  checksum: 908a6bc877c49ca756bbf50d2ab365ee0315a66af52e14042a5c56077311f3d7c9e028524703c54c8d4b608e3d57346ee0400105acab3c3cded3238513657916
   languageName: node
   linkType: hard
 

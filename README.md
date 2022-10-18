@@ -41,6 +41,8 @@ You can then use built-in node-RED **switch** node to route the event based on `
 
 For more examples, see the [examples folder](https://github.com/yadomi/node-red-contrib-philipshue-events/tree/master/examples). You can also access them in Node-RED > Import > Examples > @yadomi/node-red-contrib-philipshue-events`.
 
+For complexes use case, see **@andesse**'s [HUE-CLIP-API.Node-RED-Flows](https://github.com/andesse/HUE-CLIP-API.Node-RED-Flows) 
+
 ## Development
 
 Clone the repository 

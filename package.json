@@ -15,7 +15,7 @@
     "node": ">=12.0.0"
   },
   "node-red": {
-    "version": ">=2.2.2",
+    "version": ">=2.0.0",
     "nodes": {
       "philipshue-events-config": "lib/philipshue-events-config/philipshue-events-config.js",
       "philipshue-events": "lib/philipshue-events/philipshue-events.js"
@@ -41,11 +41,11 @@
   },
   "devDependencies": {
     "@types/eventsource": "^1.1.9",
-    "@types/node": "^18.0.4",
+    "@types/node": "^18.11.1",
     "glob": "^8.0.3",
-    "node-red": "^3.0.0",
-    "nodemon": "^2.0.19",
+    "node-red": "^3.0.2",
+    "nodemon": "^2.0.20",
     "tsc": "^2.0.4",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.4"
   }
 }

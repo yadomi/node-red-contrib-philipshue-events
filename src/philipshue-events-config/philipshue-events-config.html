@@ -58,10 +58,11 @@
     color: "#ff9514",
     defaults: {
       address: { value: null },
+      name: { value: null },
       applicationkey: { value: null },
     },
-    label: function () {
-      return this.address ? `Hue (${this.address})` : "Hue";
+    label: function() {
+      return this.name || (this.address ? `Hue (${this.address})` : "Hue");
     },
     oneditprepare: () => {
       this.interval = null;
@@ -73,6 +74,7 @@
 
       let input = {
         address: document.querySelector("#node-config-input-address"),
+        name: document.querySelector("#node-config-input-name"),
         applicationkey: document.querySelector(
           "#node-config-input-applicationkey"
         ),
@@ -85,6 +87,7 @@
             const [bridge] = res;
             if (bridge && bridge.internalipaddress) {
               input.address.value = bridge.internalipaddress;
+              input.name.value =  `Hue (${bridge.internalipaddress})`;
 
               document.querySelector("#bridge-info").style.display = "block";
               document.querySelector(
@@ -97,7 +100,7 @@
       };
 
       const onPairRequest = () => {
-        const interval = () => {
+        const timer = () => {
           fetch(`http://${input.address.value}/api`, {
             method: "POST",
             body: JSON.stringify({
@@ -121,7 +124,7 @@
             });
         };
 
-        this.interval = setInterval(interval, 2000);
+        this.interval = setInterval(timer, 2000);
       };
 
       button.discover.addEventListener('click', onDiscover);
@@ -154,12 +157,16 @@
 
   <hr/>
   <div class="form-row">
-      <label for="node-config-input-address">Bridge address</label>
-      <input type="text" id="node-config-input-address" placeholder="192.168.0.25">
-      <button type="button" id="btn-pair" class="red-ui-button">Pair</button>
+    <label for="node-config-input-name"><i class="icon-tag"></i>Label</label>
+    <input type="text" id="node-config-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-      <label for="node-config-input-applicationkey"><i class="icon-tag"></i>Application key</label>
-      <input type="text" id="node-config-input-applicationkey" placeholder="xxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxx">
+    <label for="node-config-input-address">Bridge address</label>
+    <input type="text" id="node-config-input-address" placeholder="192.168.0.25">
+    <button type="button" id="btn-pair" class="red-ui-button">Pair</button>
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-applicationkey"><i class="icon-tag"></i>Application key</label>
+    <input type="text" id="node-config-input-applicationkey" placeholder="xxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxx">
   </div>
 </script>

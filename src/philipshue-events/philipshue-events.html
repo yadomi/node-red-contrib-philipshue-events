@@ -6,12 +6,20 @@
     inputs: 0,
     outputs: 1,
     defaults: {
+      name: { value: null },
       bridge: { value: null, type: "philipshue-events-config", required: true },
     },
+    label: function () {
+      return this.name || 'philipshue-events'
+    }
   });
 </script>
 
 <script type="text/x-red" data-template-name="philipshue-events">
+  <div class="form-row">
+    <label for="node-input-name">Label</label>
+    <input type="text" id="node-input-name" placeholder="name">
+  </div>
   <div class="form-row">
       <label for="node-input-bridge">Bridge</label>
       <input type="text" id="node-input-bridge" placeholder="bridge">
